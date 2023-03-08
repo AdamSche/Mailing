@@ -1,0 +1,5 @@
+This code is sending separate mails to prospect.
+Need to add .txt with email adresses sended and code will print adresses there
+and check before sending emial if adress is alredy there
+
+Code sending body via outlook tempalete
