@@ -35,6 +35,10 @@ for index, row in df.iterrows():
     mail.To = row['email_address']
     mail.Subject = f'Subject dla {row["company_name"]}'
     mail.htmlBody = template.HTMLBody
+    if pd.isna(row['prospect_name']) or row['prospect_name'] == "":
+        mail.htmlBody = template.HTMLBody.replace('{prospect_name}', '')
+    else:
+        mail.htmlBody = template.HTMLBody.replace('{prospect_name}', row['prospect_name'])
     mail.Attachments.Add(r'Attachment')
     mail.Display()
 
